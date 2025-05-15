@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Making a book constructor</title>
+</head>
+<body>
+    <script>
+function Book(title,author,pages,read){
+    if(!new.target){
+        throw Error("NEW should be used before using this constructor");    }
+this.title=title;
+this.author=author;
+this.pages=pages;
+this.read=read;
+this.info=function(){
+    document.write(this.title+" by "+this.author+", "+this.pages+",Completion status:"+this.read);
+};
+}
+const b1= new Book("TBATE","Prasanna Pradhan",208,"yes");
+
+b1.info();
+
+
+
+    </script>
+    <p>hellow
+        
+    </p>
+    
+</body>
+</html>
