@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+
+    <script>
+
+        //How to define and Object
+
+        //THE FIRST OBJECT I MADE
+ const p1 ={
+
+    name : "Prasanna",
+    age:17,
+    "RaiseHand": function(){
+        window.alert("The player " +p1.name+" of age "+ p1.age+" has raised his hands")
+    }
+
+
+   };
+//THE SECOND OBJECT I MADE
+  const p2 ={
+name: "Shyam",
+age:23,
+"Yell": function(){
+    window.alert("The player "+p2.name+" of age "+p2.age+"has YELLED at the teacher!!!")
+}
+
+
+  };
+//IM CALLING OUT THE FUNCTION
+
+   // p2["Yell"]();
+
+
+  //now new way to write functions
+
+function player(name,marker){
+this.name=name;
+this.marker=marker;
+this.sayname= function(){
+  document.write(this.name);
+};
+}
+const pp1= new player("steve", "X");
+
+//p1.sayname();
+//p2.sayname();
+
+
+
+
+//Here, If i don't use the "New Operator",it can bring very much erros later.. so LETS make the codes such that i need the operator New For using the operators
+
+
+function car(name,color)
+{    
+    if(!new.target){
+        throw Error("You must use the operator new to access this constructor");
+        
+    }
+    this.name=name;
+    this.color=color;
+    this.Sayname= function(){
+        document.write("The name of the car is "+this.name+" And the color of the car is "+this.color)
+    };
+}
+
+const c1 =  new car("BMW","black");
+
+c1.Sayname();
+
+
+    </script>
+
+    
+</body>
+</html>
